@@ -1,0 +1,15 @@
+[package]
+authors = ["Hendrik Sollich <hendrik@hoodie.de>"]
+name = "mpdt"
+version = "0.1.0"
+
+[dependencies]
+lazy_static = "*"
+#mpd = { path = "../mpd", features = ["serdialize"] }
+mpd = "*"
+rocket = "*"
+rocket_codegen = "*"
+rocket_contrib = {version = "*", features = ["handlebars_templates"] }
+serde = "*"
+serde_derive = "*"
+serde_json = "*"

@@ -1,0 +1,61 @@
+<html>
+<head>
+<title> MPD web interface </title>
+</head>
+
+<body>
+  <h1> MPD web interface  </h1>
+  <h2>
+    playing:
+  {{song.title}} by
+  {{song.tags.AlbumArtist}}
+  </h2>
+
+  <form action="/prev"
+        method="post"
+        accept-charset="utf-8"
+        style = "display:inline;" >
+    <input type="submit" value=" ⏮️ prev">
+  </form>
+
+  <form action="/play"
+        method="post"
+        accept-charset="utf-8"
+        style = "display:inline;" >
+    <input type="submit" value="▶️️ play">
+  </form>
+
+  <form action="/pause"
+        method="post"
+        accept-charset="utf-8"
+        style = "display:inline;" >
+    <input type="submit" value="⏸️ pause">
+  </form>
+
+  <form action="/next"
+        method="post"
+        accept-charset="utf-8"
+        style = "display:inline;" >
+    <input type="submit" value="⏭️ Next ">
+  </form>
+
+  <table>
+    {{#each queue}}
+    <tr>
+      <td>
+        {{#if this.running}}
+        ▶️️
+        {{/if}}
+      </td><td>
+        {{this.tags.Track}}
+      </td><td>
+        {{this.title}}
+      </td><td>
+        {{this.tags.AlbumArtist}}
+      </td>
+    </tr>
+    {{/each}}
+  </table>
+
+</body>
+</html>
